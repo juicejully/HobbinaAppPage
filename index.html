@@ -80,7 +80,7 @@
             color: #9146ff;
         }
         .comment-section textarea {
-            width: 100%;
+            width: 90%;
             height: 150px;
             border-radius: 10px;
             padding: 10px;
@@ -89,7 +89,7 @@
             font-size: 16px;
         }
         .comment-section button {
-            width: 100%;
+            width: 90%;
             padding: 10px;
             background-color: #9146ff;
             color: white;
@@ -150,10 +150,27 @@
     <footer>Created by JuiceJully 🍷</footer>
 
     <!-- Comment Section -->
-    <div class="comment-section">
-        <h3>Leave a Comment</h3>
-        <textarea placeholder="Write your comment here..."></textarea>
-        <button>Submit</button>
-    </div>
+    <!-- Disqus Comments Section -->
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  REPLACE 'YOUR_SHORTNAME' with your Disqus shortname.
+     */
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // Current page URL
+        this.page.identifier = window.location.pathname; // Current page identifier
+    };
+    
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hobbina-app.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>
+    Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
 </body>
 </html>
