@@ -64,12 +64,6 @@
             font-size: 14px;
             color: #777;
         }
-        iframe[src*="disqus.com"] {
-        width: 1000px !important;
-        min-width: 90% !important;
-        height: 1773px !important; /* You can adjust the height as needed */
-        border: none !important;
-        }
 
     </style>
 </head>
@@ -117,31 +111,6 @@
     </section>
 
     <footer>Created by JuiceJully 🍷</footer>
-
-       <!-- Comment Section -->
-    <div id="disqus_thread"></div>
-    <iframe id="dsq-app9432" name="dsq-app9432" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="https://disqus.com/embed/comments/?base=default&amp;f=hobbina-app&amp;t_i=%2FHobbinaAppPage%2F&amp;t_u=https%3A%2F%2Fjuicejully.github.io%2FHobbinaAppPage%2F&amp;t_d=Hobbina%20-%20Official%20Page&amp;t_t=Hobbina%20-%20Official%20Page&amp;s_o=default#version=ee0ab69468759355b300526071ec669c" style="width: 100% !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 1773px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe>
-    <script>
-        var disqus_config = function () {
-            this.page.url = window.location.href;  // Current page URL
-            this.page.identifier = window.location.pathname; // Current page identifier
-        };
-        
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://hobbina-app.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-        window.addEventListener('load', function () {
-            var iframe = document.querySelector('iframe[src*="disqus.com"]');
-            if (iframe) {
-                iframe.style.width = "100%";
-                iframe.style.minWidth = "100%";
-            }
-        });
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </body>
 </html>
