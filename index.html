@@ -9,34 +9,101 @@
     <style>
         body {
             font-family: 'Sora', sans-serif;
-            background-color: #CCC2DC
+            background-color: #CCC2DC;
             color: #333;
-            text-align: center;
-            padding: 50px;
             margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            height: 100vh;
+            align-items: center;
+            text-align: center;
+            overflow-y: scroll;
         }
-        h1 {
+        section {
+            padding: 50px 20px;
+            max-width: 800px;
+        }
+        h1, h2 {
             font-weight: 600;
             color: #9146ff;
         }
         p {
-            margin-top: 16px;
             font-size: 18px;
+            margin: 16px 0;
+        }
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .images img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            background-color: #9146ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #7229cc;
         }
         footer {
-            margin-top: 40px;
+            margin-top: 50px;
             font-size: 14px;
             color: #777;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to Hobbina</h1>
-    <p>The Official Page of the Hobbina App.</p>
+    <section>
+        <h1>Welcome to Hobbina</h1>
+        <p>The Official Page of the Hobbina App.</p>
+    </section>
+
+    <section>
+        <div class="images">
+            <img src="https://via.placeholder.com/300" alt="Screenshot 1">
+            <img src="https://via.placeholder.com/300" alt="Screenshot 2">
+        </div>
+        <h2>Discover Your Hobbies</h2>
+        <p>Track and explore your daily hobbies with ease.</p>
+    </section>
+
+    <section>
+        <div class="images">
+            <img src="https://via.placeholder.com/300" alt="Screenshot 3">
+            <img src="https://via.placeholder.com/300" alt="Screenshot 4">
+            <img src="https://via.placeholder.com/300" alt="Screenshot 5">
+        </div>
+        <h2>Plan Your Week</h2>
+        <p>Organize your week and stay motivated.</p>
+    </section>
+
+    <section>
+        <div class="images">
+            <img src="https://via.placeholder.com/300" alt="Screenshot 6">
+            <img src="https://via.placeholder.com/300" alt="Screenshot 7">
+        </div>
+        <h2>Track Your Progress</h2>
+        <p>Visualize your achievements over time.</p>
+    </section>
+
+    <section>
+        <h2>Download Hobbina Now!</h2>
+        <p>Start your journey towards a more productive life.</p>
+        <button>Download</button>
+    </section>
+
     <footer>Created by JuiceJully 🍷</footer>
 </body>
 </html>
