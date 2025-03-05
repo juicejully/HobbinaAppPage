@@ -22,7 +22,7 @@
         section {
             padding: 50px 20px;
             max-width: 800px;
-            margin-bottom: 80px; /* Increased space between sections */
+            margin-bottom: 80px;
         }
         h1, h2 {
             font-weight: 600;
@@ -40,7 +40,7 @@
             margin-bottom: 20px;
         }
         .images img {
-            width: 180px; /* Reduced image size */
+            width: 180px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -63,6 +63,44 @@
             margin-top: 50px;
             font-size: 14px;
             color: #777;
+        }
+
+        /* Styling for the comment section */
+        .comment-section {
+            margin-top: 50px;
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .comment-section h3 {
+            font-weight: 600;
+            color: #9146ff;
+        }
+        .comment-section textarea {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .comment-section button {
+            width: 100%;
+            padding: 10px;
+            background-color: #9146ff;
+            color: white;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        .comment-section button:hover {
+            background-color: #7229cc;
         }
     </style>
 </head>
@@ -110,5 +148,12 @@
     </section>
 
     <footer>Created by JuiceJully 🍷</footer>
+
+    <!-- Comment Section -->
+    <div class="comment-section">
+        <h3>Leave a Comment</h3>
+        <textarea placeholder="Write your comment here..."></textarea>
+        <button>Submit</button>
+    </div>
 </body>
 </html>
