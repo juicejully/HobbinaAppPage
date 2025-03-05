@@ -64,6 +64,13 @@
             font-size: 14px;
             color: #777;
         }
+        iframe[src*="disqus.com"] {
+        width: 100% !important;
+        min-width: 100% !important;
+        height: 1773px !important; /* You can adjust the height as needed */
+        border: none !important;
+        }
+
     </style>
 </head>
 <body>
@@ -126,6 +133,13 @@
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         })();
+        window.addEventListener('load', function () {
+            var iframe = document.querySelector('iframe[src*="disqus.com"]');
+            if (iframe) {
+                iframe.style.width = "100%";
+                iframe.style.minWidth = "100%";
+            }
+        });
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
