@@ -101,7 +101,7 @@
 </head>
 <body>
     <section>
-        <h1>Welcome to Hobbina</h1>
+        <h1>Welcome to Hobbina!</h1>
         <p>The Official Page of the Hobbina App.</p>
     </section>
 
@@ -129,7 +129,7 @@
             <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215148.png" alt="Screenshot 6">
             <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215202.png" alt="Screenshot 7">
         </div>
-        <h2>Track Your Progress</h2>
+        <h2>Track your progress</h2>
         <p>Track your progress and visualize all your hobbies in one place. Create a to-do list to keep you on track.</p>
     </section>
 
@@ -165,6 +165,9 @@
                     organize: "Organize your hobbies by frequency: daily, weekly, or monthly. Add and stay motivated with a personalized schedule.",
                     progress: "Track your progress and visualize all your hobbies in one place. Create a to-do list to keep you on track.",
                     download: "The app is still under development, but feel free to give it a try."
+                    h21: "Track your hobbies",
+                    h22: "Add your hobbies"
+                    h23: "Track your progress"
                 },
                 pt: {
                     welcome: "Bem-vindo ao Hobbina!",
@@ -173,6 +176,9 @@
                     organize: "Organize seus hobbies por frequência: diários, semanais ou mensais. Adicione e se mantenha motivado com um cronograma personalizado.",
                     progress: "Acompanhe seu progresso e visualize todos os seus hobbies em um só lugar. Crie uma lista de tarefas para se manter no caminho certo.",
                     download: "O aplicativo ainda está em desenvolvimento, mas sinta-se à vontade para testá-lo."
+                    h21: "Acompanhe seus hobbies",
+                    h22: "Adicione seus hobbies"
+                    h23: "Acompanhe seu progresso"
                 },
             };
             document.querySelector('h1').innerText = text[lang].welcome;
@@ -182,6 +188,10 @@
             paragraphs[2].innerText = text[lang].organize;
             paragraphs[3].innerText = text[lang].progress;
             paragraphs[4].innerText = text[lang].download;
+            const paragraphsh2 = document.querySelectorAll('section h2');
+            paragraphsh2[0].innerText = text[lang].h21;
+            paragraphsh2[1].innerText = text[lang].h22;
+            paragraphsh2[2].innerText = text[lang].h23;
         }
     </script>
 </body>
