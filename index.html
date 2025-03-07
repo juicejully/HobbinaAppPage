@@ -160,6 +160,7 @@
             const text = {
                 en: {
                     welcome: "Welcome to Hobbina!",
+                    intro: "The Official Page of the Hobbina App."
                     track: "Easily track and explore your daily hobbies. Hobbina offers both weekly and monthly views to help you manage them effortlessly.",
                     organize: "Organize your hobbies by frequency: daily, weekly, or monthly. Add and stay motivated with a personalized schedule.",
                     progress: "Track your progress and visualize all your hobbies in one place. Create a to-do list to keep you on track.",
@@ -167,6 +168,7 @@
                 },
                 pt: {
                     welcome: "Bem-vindo ao Hobbina!",
+                    intro: "Pagina oficial do aplicativo Hobbina.",
                     track: "Acompanhe e explore seus hobbies diários com facilidade. O Hobbina oferece visualizações semanal e mensal para ajudar a gerenciar tudo de forma simples.",
                     organize: "Organize seus hobbies por frequência: diários, semanais ou mensais. Adicione e se mantenha motivado com um cronograma personalizado.",
                     progress: "Acompanhe seu progresso e visualize todos os seus hobbies em um só lugar. Crie uma lista de tarefas para se manter no caminho certo.",
@@ -175,6 +177,7 @@
             };
             document.querySelector('h1').innerText = text[lang].welcome;
             const paragraphs = document.querySelectorAll('section p');
+            paragraphs[1].innerText = text[lang].intro;
             paragraphs[2].innerText = text[lang].track;
             paragraphs[3].innerText = text[lang].organize;
             paragraphs[4].innerText = text[lang].progress;
