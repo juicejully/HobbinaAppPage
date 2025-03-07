@@ -48,13 +48,12 @@
         button {
             background-color: #9146ff;
             color: white;
-            padding: 10px;
+            padding: 10px 20px;
             border: none;
             border-radius: 10px;
             font-size: 18px;
             cursor: pointer;
             transition: background-color 0.3s;
-            width: 100%;
         }
         button:hover {
             background-color: #7229cc;
@@ -64,75 +63,40 @@
             font-size: 14px;
             color: #777;
         }
-
-        /* Idiom Drawer */
         .idiom-drawer {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 99;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px 0;
-            background: rgba(145, 70, 255, 0.8);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            top: 20px;
+            right: 20px;
+            text-align: right;
         }
-
         .drawer-button {
-            color: #fff;
-            padding: 10px;
-            width: 100%;
-            text-align: center;
+            background-color: #9146ff;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 20px 0 0 20px;
             cursor: pointer;
-            transition: background 0.3s;
-            font-weight: bold;
+            width: 120px;
+            text-align: center;
+            transition: background-color 0.3s;
         }
         .drawer-button:hover {
-            background: rgba(114, 41, 204, 0.9);
+            background-color: #7229cc;
         }
         .drawer-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, opacity 0.4s ease;
-            opacity: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 100%;
+            display: none;
+            margin-top: 10px;
+        }
+        .idiom-drawer.open .drawer-content {
+            display: block;
         }
         .drawer-content button {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            border: none;
-            padding: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-            border-radius: 0;
-        }
-        .drawer-content button:hover {
-            background: rgba(145, 70, 255, 0.3);
-        }
-        .drawer-open {
-            max-height: 200px;
-            opacity: 1;
+            display: block;
+            margin: 5px 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="idiom-drawer">
-        <div class="drawer-button" onclick="toggleDrawer()">🌐 Select Language</div>
-        <div class="drawer-content">
-            <button onclick="selectIdiom('English')">English</button>
-            <button onclick="selectIdiom('Português')">Português</button>
-            <button onclick="selectIdiom('한국어')">한국어</button>
-            <button onclick="selectIdiom('日本語')">日本語</button>
-        </div>
-    </div>
-
     <section>
         <h1>Welcome to Hobbina</h1>
         <p>The Official Page of the Hobbina App.</p>
@@ -144,7 +108,26 @@
             <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215131.png" alt="Screenshot 2">
         </div>
         <h2>Track your hobbies</h2>
-        <p>Track and explore your daily hobbies with ease.</p>
+        <p>Track and explore your daily hobbies with ease. Hobbina has a week view and a month view to show your hobbies.</p>
+    </section>
+
+    <section>
+        <div class="images">
+            <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215216.png" alt="Screenshot 3">
+            <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215227.png" alt="Screenshot 4">
+            <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215241.png">
+        </div>
+        <h2>Add your hobbies</h2>
+        <p>Organize your hobbies: daily, weekly or monthly. Add your hobbies by their frequency and stay motivated.</p>
+    </section>
+
+    <section>
+        <div class="images">
+            <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215148.png" alt="Screenshot 6">
+            <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215202.png" alt="Screenshot 7">
+        </div>
+        <h2>Track Your Progress</h2>
+        <p>Visualize all your hobbies and make your to-do list.</p>
     </section>
 
     <section>
@@ -155,27 +138,45 @@
         </a>
     </section>
 
+    <div class="idiom-drawer">
+        <div class="drawer-button" onclick="toggleDrawer()">🌐</div>
+        <div class="drawer-content">
+            <button onclick="translatePage('en')">English</button>
+            <button onclick="translatePage('pt')">Português</button>
+        </div>
+    </div>
+
     <footer>Created by JuiceJully 🍷</footer>
 
     <script>
         function toggleDrawer() {
-            const drawer = document.querySelector(".drawer-content");
-            drawer.classList.toggle("drawer-open");
+            document.querySelector('.idiom-drawer').classList.toggle('open');
         }
 
-        function selectIdiom(idiom) {
-            alert(`Selected Language: ${idiom}`);
-            document.querySelector(".drawer-content").classList.remove("drawer-open");
+        function translatePage(lang) {
+            const text = {
+                en: {
+                    welcome: "Welcome to Hobbina",
+                    track: "Track and explore your daily hobbies with ease. Hobbina has a week view and a month view to show your hobbies.",
+                    organize: "Organize your hobbies: daily, weekly or monthly. Add your hobbies by their frequency and stay motivated.",
+                    progress: "Visualize all your hobbies and make your to-do list.",
+                    download: "The app is still in development, but feel free to test it."
+                },
+                pt: {
+                    welcome: "Bem-vindo ao Hobbina",
+                    track: "Acompanhe e explore seus hobbies diários com facilidade. O Hobbina possui visão semanal e mensal para mostrar seus hobbies.",
+                    organize: "Organize seus hobbies: diários, semanais ou mensais. Adicione seus hobbies pela frequência e mantenha-se motivado.",
+                    progress: "Visualize todos os seus hobbies e faça sua lista de tarefas.",
+                    download: "O aplicativo ainda está em desenvolvimento, mas sinta-se à vontade para testá-lo."
+                }
+            };
+            document.querySelector('h1').innerText = text[lang].welcome;
+            const paragraphs = document.querySelectorAll('section p');
+            paragraphs[0].innerText = text[lang].track;
+            paragraphs[1].innerText = text[lang].organize;
+            paragraphs[2].innerText = text[lang].progress;
+            paragraphs[3].innerText = text[lang].download;
         }
-
-        document.addEventListener("click", (e) => {
-            const drawer = document.querySelector(".drawer-content");
-            const button = document.querySelector(".drawer-button");
-
-            if (e.target !== button && !drawer.contains(e.target)) {
-                drawer.classList.remove("drawer-open");
-            }
-        });
     </script>
 </body>
 </html>
