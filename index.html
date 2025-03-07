@@ -45,7 +45,6 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-
         button {
             background-color: #9146ff;
             color: white;
@@ -64,7 +63,66 @@
             font-size: 14px;
             color: #777;
         }
-    <link rel="stylesheet" href="style.css">
+
+        /* Idiom Drawer */
+        .idiom-drawer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .drawer-button {
+            background: rgba(145, 70, 255, 0.8);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            padding: 10px;
+            width: 50px;
+            text-align: center;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .drawer-button:hover {
+            transform: scale(1.1);
+        }
+        .drawer-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, opacity 0.4s ease;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 10px;
+            gap: 10px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+        }
+        .drawer-content button {
+            background: none;
+            border: none;
+            padding: 10px;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            border-radius: 10px;
+        }
+        .drawer-content button:hover {
+            background: rgba(145, 70, 255, 0.3);
+        }
+        .drawer-open {
+            max-height: 200px;
+            opacity: 1;
+            pointer-events: all;
+        }
     </style>
 </head>
 <body>
@@ -79,50 +137,48 @@
             <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215131.png" alt="Screenshot 2">
         </div>
         <h2>Track your hobbies</h2>
-        <p>Track and explore your daily hobbies with ease. Hobbina has a week view and a month view to show your hobbies.</p>
-    </section>
-
-    <section>
-        <div class="images">
-            <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215216.png" alt="Screenshot 3">
-            <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215227.png" alt="Screenshot 4">
-            <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215241.png">
-        </div>
-        <h2>Add your hobbies</h2>
-        <p>Organize your hobbies: daily, weekly or monthly. Add your hobbies by it frequency and stay motivated. </p>
-    </section>
-
-    <section>
-        <div class="images">
-            <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215148.png" alt="Screenshot 6">
-            <img src="https://raw.githubusercontent.com/juicejully/HobbinaAppPage/refs/heads/main/img/Screenshot_20250304_215202.png" alt="Screenshot 7">
-        </div>
-        <h2>Track Your Progress</h2>
-        <p>Visualize all your hobbies and make your to do list.</p>
+        <p>Track and explore your daily hobbies with ease.</p>
     </section>
 
     <section>
         <h2>Download Hobbina</h2>
         <p>The app is still in development, but feel free to test it.</p>
-
         <a href="https://github.com/juicejully/HobbinaApk/releases/download/Hobbina/app-debug.apk" target="_blank">
             <button>Download</button>
         </a>
     </section>
 
     <div class="idiom-drawer">
-      <div class="drawer-button" onclick="toggleDrawer()">🌐</div>
-      <div class="drawer-content">
-        <button>English</button>
-        <button>Português</button>
-        <button>한국어</button>
-        <button>日本語</button>
-      </div>
+        <div class="drawer-button" onclick="toggleDrawer()">🌐</div>
+        <div class="drawer-content">
+            <button onclick="selectIdiom('English')">English</button>
+            <button onclick="selectIdiom('Português')">Português</button>
+            <button onclick="selectIdiom('한국어')">한국어</button>
+            <button onclick="selectIdiom('日本語')">日本語</button>
+        </div>
     </div>
-    
-    <script src="script.js"></script>
 
     <footer>Created by JuiceJully 🍷</footer>
 
+    <script>
+        function toggleDrawer() {
+            const drawer = document.querySelector(".drawer-content");
+            drawer.classList.toggle("drawer-open");
+        }
+
+        function selectIdiom(idiom) {
+            alert(`Selected Language: ${idiom}`);
+            document.querySelector(".drawer-content").classList.remove("drawer-open");
+        }
+
+        document.addEventListener("click", (e) => {
+            const drawer = document.querySelector(".drawer-content");
+            const button = document.querySelector(".drawer-button");
+
+            if (e.target !== button && !drawer.contains(e.target)) {
+                drawer.classList.remove("drawer-open");
+            }
+        });
+    </script>
 </body>
 </html>
